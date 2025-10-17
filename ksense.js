@@ -1,8 +1,6 @@
 
 const fs = require("fs");
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
-
-
 const API_KEY = "ak_5f2a10f7f3245c589798014a61196a3dd38b055c42392f6a";
 const BASE_URL = "https://assessment.ksensetech.com/api/patients";
 
