@@ -25,7 +25,7 @@ async function fetchAllPatients(limit = 5) {
     }
 
     if (response.status === 500 || response.status === 503) {
-      console.log(`⚠️ Server error ${response.status}. Retrying in 2 seconds...`);
+      console.log(`Server error ${response.status}. Retrying in 2 seconds...`);
       await new Promise((res) => setTimeout(res, 2000));
       continue;
     }
@@ -146,8 +146,8 @@ async function run() {
   );
   fs.writeFileSync("patient_risk_results.json", JSON.stringify(results, null, 4));
 
-  console.log("✅ Categorization complete!");
+  console.log("Categorization complete!");
   console.log(JSON.stringify(results, null, 4));
 }
 
-run().catch((err) => console.error("❌ Error:", err));
+run().catch((err) => console.error("Error:", err));
